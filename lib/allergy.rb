@@ -3,12 +3,12 @@ def allergy(user_score)
               8 => "strawberries", 4 => "shellfish", 2 => "peanuts", 1 => "eggs" }
   allergies = []
   allergens.each do | score, allergen |
-    if user_score == score
-      allergies << allergen
+      if score <= user_score
+        allergies << allergen
+        user_score -= score
+      end
     end
-  end
   allergies
 end
-# user_score - allergens = score
 
-# allergy(1)
+puts allergy(5)
